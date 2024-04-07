@@ -12,7 +12,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_sales")
-public class Sale {
+public class Sale 
+{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,51 +30,63 @@ public class Sale {
 	public Sale() {
 	}
 
-	public Long getId() {
+	public Long getId() 
+	{
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Long id)
+	{
 		this.id = id;
 	}
 
-	public Integer getVisited() {
+	public Integer getVisited() 
+	{
 		return visited;
 	}
 
-	public void setVisited(Integer visited) {
+	public void setVisited(Integer visited) 
+	{
 		this.visited = visited;
 	}
 
-	public Integer getDeals() {
+	public Integer getDeals()
+	{
 		return deals;
 	}
 
-	public void setDeals(Integer deals) {
+	public void setDeals(Integer deals) 
+	{
 		this.deals = deals;
 	}
 
-	public Double getAmount() {
+	public Double getAmount() 
+	{
 		return amount;
 	}
 
-	public void setAmount(Double amount) {
+	public void setAmount(Double amount)
+	{
 		this.amount = amount;
 	}
 
-	public LocalDate getDate() {
+	public LocalDate getDate() 
+	{
 		return date;
 	}
 
-	public void setDate(LocalDate date) {
+	public void setDate(LocalDate date) 
+	{
 		this.date = date;
 	}
 
-	public Seller getSeller() {
+	public Seller getSeller() 
+	{
 		return seller;
 	}
 
-	public void setSeller(Seller seller) {
+	public void setSeller(Seller seller) 
+	{
 		this.seller = seller;
 	}
 }

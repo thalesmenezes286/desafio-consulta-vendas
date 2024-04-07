@@ -13,14 +13,18 @@ import com.devsuperior.dsmeta.services.SaleService;
 
 @RestController
 @RequestMapping(value = "/sales")
-public class SaleController {
+public class SaleController 
+{
 
 	@Autowired
 	private SaleService service;
 
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<SaleMinDTO> findById(@PathVariable Long id) {
+	public ResponseEntity<SaleMinDTO> findById(@PathVariable Long id) 
+	{
+		
 		SaleMinDTO dto = service.findById(id);
+		
 		return ResponseEntity.ok(dto);
 	}
 
@@ -28,15 +32,19 @@ public class SaleController {
 	public ResponseEntity<Page<SaleReportDTO>> getReport(
 			@RequestParam(name = "minDate", defaultValue = "") String minDate,
 			@RequestParam(name = "maxDate", defaultValue = "") String maxDate,
-			@RequestParam(name = "name", defaultValue = "") String name, Pageable pageable) {
+			@RequestParam(name = "name", defaultValue = "") String name, Pageable pageable) 
+	{
+		
 		Page<SaleReportDTO> dto = service.findReports(minDate, maxDate, name, pageable);
+		
 		return ResponseEntity.ok(dto);
 	}
 
 	@GetMapping(value = "/summary")
 	public ResponseEntity<Page<SaleSummaryDTO>> getSummary(
 			@RequestParam(name = "minDate", defaultValue = "") String minDate,
-			@RequestParam(name = "maxDate", defaultValue = "") String maxDate, Pageable pageable) {
+			@RequestParam(name = "maxDate", defaultValue = "") String maxDate, Pageable pageable) 
+	{
 
 		Page<SaleSummaryDTO> dto = service.findSummaries(minDate, maxDate, pageable);
 
