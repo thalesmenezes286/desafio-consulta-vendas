@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import com.devsuperior.dsmeta.entities.Sale;
 
 public class SaleMinDTO {
-
+	
 	private Long id;
 	private Double amount;
 	private LocalDate date;
